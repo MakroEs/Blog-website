@@ -34,16 +34,16 @@ const page = () => {
             <thead className='text-sm text-gray-700 text-left uppercase bg-gray-50'>
               <tr>
                 <th scope='col' className='hidden sm:block px-6 py-3'>
-                  Author name
+                Yazar adı
                 </th>
                 <th scope='col' className=' px-6 py-3'>
-                  Blog Title
+                Blog Başlığı
                 </th>
                 <th scope='col' className=' px-6 py-3'>
-                 Blog Date
+                 Blog Tarihi
                 </th>
                 <th scope='col' className=' px-6 py-3'>
-                  Action
+                Aksiyon
                 </th>
               </tr>
             </thead>

@@ -11,6 +11,7 @@ const LoadDB = async () => {
   }
 };
 
+// Bağlantıyı uygulama başlatılırken yapın
 LoadDB();
 
 export async function POST(request) {
@@ -31,6 +32,17 @@ export async function POST(request) {
     return NextResponse.json({ success: true, msg: "Email başarıyla abone edildi." });
   } catch (error) {
     console.error('POST isteği hatası:', error); // Hata loglama
+    return NextResponse.json({ success: false, msg: "Sunucu hatası oluştu." }, { status: 500 });
+  }
+}
+
+export async function GET(request) {
+  try {
+    // EmailModel'den verileri al
+    const emails = await EmailModel.find({});
+    return NextResponse.json({ success: true, emails });
+  } catch (error) {
+    console.error('GET isteği hatası:', error); // Hata loglama
     return NextResponse.json({ success: false, msg: "Sunucu hatası oluştu." }, { status: 500 });
   }
 }
