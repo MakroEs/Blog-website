@@ -21,14 +21,14 @@ const Page = ({ params }) => {
     } catch (error) {
       console.error("Error fetching blog data:", error);
     }
-  }, [params.id]); // params.id değiştiğinde fetchBlogData çağrılır
+  }, [params.id]); 
 
   useEffect(() => {
     fetchBlogData();
-  }, [fetchBlogData]); // fetchBlogData'yı bağımlılık dizisine ekleyin
+  }, [fetchBlogData]);
 
   if (!data) {
-    return <p>Loading...</p>; // Veri yüklenirken gösterilecek mesaj
+    return <p>Loading...</p>; 
   }
 
   return (
