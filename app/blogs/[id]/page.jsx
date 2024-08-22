@@ -18,6 +18,9 @@ const Page = ({ params }) => {
     setData(response.data);
   };
 
+  useEffect(() => {
+    fetchBlogData();
+  }, [])
 
   return data ? (
     <>
